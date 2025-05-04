@@ -22,12 +22,12 @@ const Projects = () => {
       githubUrl: 'https://github.com/simha10/login-authentication.git',
     },
     {
-      title: 'TakeTime learning platform',
+      title: 'SkillSpark learning platform',
       description: 'An interactive online learning platform offering roadmaps and internships designed for seamless accessibility across devices',
       image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
       tech: ['React', 'Tailwind', 'Responsiveness'],
-      liveUrl: 'https://taketime-a-learning-platform.netlify.app/',
-      githubUrl: 'https://github.com/simha10/Learning-platform--TakeTime-.git',
+      liveUrl: 'https://skillspark-x366.onrender.com',
+      githubUrl: 'https://github.com/simha10/SkillSpark.git',
     },
   ];
 

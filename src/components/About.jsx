@@ -4,9 +4,12 @@ import { Code, Palette, Layout } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { icon: <Code size={24} className='text-purple-500'/>, title: 'Frontend', description: 'HTML,CSS, JS,React, Next.js' },
-    { icon: <Palette size={24} className='text-purple-500' />, title: 'Backend', description: 'MySQL,Express' },
+    { icon: <Code size={24} className='text-purple-500'/>, title: 'Frontend', description: 'HTML,CSS, JS,React,' },
+    { icon: <Palette size={24} className='text-purple-500' />, title: 'Backend', description: 'MySQL,Express,Node JS,MongoDB' },
     { icon: <Layout size={24} className='text-purple-500' />, title: 'Others', description: 'Git,GitHub,Vscode' },
+    { icon: <Code size={24} className='text-purple-500'/>, title: 'Tools', description: 'Figma,Postman,Vercel' },
+    { icon: <Palette size={24} className='text-purple-500' />, title: 'Languages', description: 'English, Hindi, Telugu' },
+    { icon: <Code size={24} className='text-purple-500'/>, title: 'Interests', description: 'Web Development, UI/UX Design, Open Source' },
   ];
 
   return (
@@ -27,7 +30,7 @@ const About = () => {
               Frontend developer passionate about creating beautiful, responsive, and user-friendly web applications. Specialized in modern JavaScript frameworks and UI/UX best practices.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg: gap-8">
               {skills.map((skill, index) => (
                 <div 
                   key={index} 
