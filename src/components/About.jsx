@@ -27,7 +27,7 @@ const About = () => {
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-extrabold sm:text-4xl mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">About Me</h2>
             <p className="text-xl text-gray-300 mb-12">
-              Frontend developer passionate about creating beautiful, responsive, and user-friendly web applications. Specialized in modern JavaScript frameworks and UI/UX best practices.
+              Full Stack developer passionate about creating beautiful, responsive, and user-friendly web applications. Specialized in modern JavaScript frameworks and UI/UX best practices.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg: gap-8">

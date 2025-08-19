@@ -10,7 +10,7 @@ const Hero = () => {
             <span className="block animate-gradient bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               Hi, I'm Simhachalam <span>Mandapudi</span>
             </span>
-            <span className="block text-indigo-400 mt-2">Frontend Developer</span>
+            <span className="block text-indigo-400 mt-2">MERN Stack Developer</span>
           </h1>
           <p className="mt-6 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-8 md:text-xl md:max-w-3xl">
             Crafting beautiful and responsive web interfaces with modern technologies. Passionate about creating exceptional user experiences.

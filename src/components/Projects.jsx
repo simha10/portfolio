@@ -6,13 +6,46 @@ const Projects = () => {
 
   const professionalProjects = [
     {
-      title: 'Weather Application',
-      description: 'Interactive weather website with real-time updates and location-based forecasts.',
-      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80',
-      tech: ['React', 'Weather API', 'CSS Grid'],
-      liveUrl: 'https://waether-app-main.netlify.app/',
-      githubUrl: 'https://github.com/simha10/weather-app-main.git',
+      title: 'SkillSpark learning platform',
+      description: 'An interactive online learning platform offering roadmaps and internships designed for seamless accessibility across devices',
+      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
+      tech: ['React', 'Tailwind', 'Responsiveness'],
+      liveUrl: 'https://skillspark-x366.onrender.com',
+      githubUrl: 'https://github.com/simha10/SkillSpark.git',
     },
+    {
+      title: 'Celestra 2025 – Tech Fest Website',
+      description: 'Built the official website for CSE’s technical fest. Features a responsive layout, smooth animations, and online registration system',
+      image: 'https://tse3.mm.bing.net/th/id/OIP.rNcEMSOcESeHF8oWRla9WwHaD8?pid=Api&P=0&h=180',
+      tech: ['React', 'Tailwind CSS', 'Framer Motion', 'Google Forms'],
+      liveUrl: 'https://celestra-2k25.vercel.app/',
+      githubUrl: 'https://github.com/simha10/TechFest-Website.git',
+    },
+    {
+      title: 'HealMate – AI Healthcare Assistant',
+      description: 'Healthcare project using a T5-based generative AI model to predict diagnoses and tailor treatment plans',
+      image: 'https://img.freepik.com/premium-photo/ai-robot-doctor-talking-with-patient-realistic_979520-21323.jpg?w=2000',
+      tech: ['React', 'Flask', 'Hugging Face'],
+      liveUrl: '#',
+      githubUrl: 'https://github.com/simha10/HealMate.git',
+    },
+    {
+      title: 'Task Distributer – Task Management System ',
+      description: 'Agent management, and task assignment; frontend React app for user interaction. A complete MERN workflow demonstrating role-based flows.',
+      image: 'https://plus.unsplash.com/premium_photo-1661756423422-4486e27eb6dd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      tech: ['React', 'MongoDB', 'Express'],
+      liveUrl: 'https://task-distributer.onrender.com/',
+      githubUrl: 'https://github.com/simha10/Task-Distributer.git',
+    },
+    {
+      title: 'Mocktail Magic – Fest Marketing Website',
+      description: 'Built for a college stall during tech fest. React + Framer Motion website integrated with Google Forms to enable online ordering and delivery management within campus.',
+      image: 'https://images.unsplash.com/photo-1654074517750-f854f7c27d62?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      tech: ['React', 'Tailwind CSS', 'Google forms'],
+      liveUrl: 'https://moctail-magic.vercel.app/',
+      githubUrl: 'https://github.com/simha10/MoctailMagic.git',
+    },
+
     {
       title: 'Login Authentication',
       description: 'A secure login system featuring password hashing, session management, and role-based access control for enhanced user security.',
@@ -22,12 +55,12 @@ const Projects = () => {
       githubUrl: 'https://github.com/simha10/login-authentication.git',
     },
     {
-      title: 'SkillSpark learning platform',
-      description: 'An interactive online learning platform offering roadmaps and internships designed for seamless accessibility across devices',
-      image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=800&q=80',
-      tech: ['React', 'Tailwind', 'Responsiveness'],
-      liveUrl: 'https://skillspark-x366.onrender.com',
-      githubUrl: 'https://github.com/simha10/SkillSpark.git',
+      title: 'Weather Application',
+      description: 'Interactive weather website with real-time updates and location-based forecasts.',
+      image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80',
+      tech: ['React', 'Weather API', 'CSS Grid'],
+      liveUrl: 'https://waether-app-main.netlify.app/',
+      githubUrl: 'https://github.com/simha10/weather-app-main.git',
     },
   ];
 
