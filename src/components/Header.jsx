@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
+    <header className="fixed w-full bg-white/60 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-gray-900">Portfolio</div>
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl font-bold text-gray-900"
+          >
+            Portfolio
+          </motion.div>
 
           <nav className="hidden md:flex space-x-8">
             <a href="#home" className="text-gray-700 hover:text-blue-900 hover:text-lg hover:border-b-2 hover:border-blue-900 transition-all duration-300">Home</a>

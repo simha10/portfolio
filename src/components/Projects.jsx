@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Gamepad2, Briefcase } from 'lucide-react';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 
 const Projects = () => {
   const [activeSection, setActiveSection] = useState('professional');
@@ -125,47 +126,74 @@ const Projects = () => {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {(activeSection === 'professional' ? professionalProjects : miniProjects).map((project, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
-                <p className="mt-2 text-gray-600">{project.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 text-sm text-indigo-600 bg-indigo-100 rounded-full"
+          {(activeSection === 'professional' ? professionalProjects : miniProjects).map((project, index) => {
+            const x = useMotionValue(0);
+            const y = useMotionValue(0);
+            const rotateX = useTransform(y, [-50, 50], [10, -10]);
+            const rotateY = useTransform(x, [-50, 50], [-10, 10]);
+            const handleMouseMove = (e) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const dx = e.clientX - rect.left - rect.width / 2;
+              const dy = e.clientY - rect.top - rect.height / 2;
+              x.set(dx);
+              y.set(dy);
+            };
+            const handleMouseLeave = () => {
+              x.set(0);
+              y.set(0);
+            };
+            return (
+              <motion.div
+                key={index}
+                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                whileHover={{ scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 15 }}
+              >
+                <div className="relative h-48">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                    style={{ transform: 'translateZ(20px)' }}
+                  />
+                </div>
+                <div className="p-6" style={{ transform: 'translateZ(30px)' }}>
+                  <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
+                  <p className="mt-2 text-gray-600">{project.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.tech.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 text-sm text-indigo-600 bg-indigo-100 rounded-full"
+                        style={{ transform: 'translateZ(40px)' }}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="mt-4 flex space-x-4">
+                    <a
+                      href={project.liveUrl} target='_blank' rel='noreferrer'
+                      className="flex items-center text-gray-600 hover:text-gray-900"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      View Project
+                    </a>
+                    <a
+                      href={project.githubUrl} target='_blank' rel='noreferrer'
+                      className="flex items-center text-gray-600 hover:text-gray-900"
+                    >
+                      <Github className="w-4 h-4 mr-1" />
+                      Source
+                    </a>
+                  </div>
                 </div>
-                <div className="mt-4 flex space-x-4">
-                  <a
-                    href={project.liveUrl} target='_blank' rel='noreferrer'
-                    className="flex items-center text-gray-600 hover:text-gray-900"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-1" />
-                    View Project
-                  </a>
-                  <a
-                    href={project.githubUrl} target='_blank' rel='noreferrer'
-                    className="flex items-center text-gray-600 hover:text-gray-900"
-                  >
-                    <Github className="w-4 h-4 mr-1" />
-                    Source
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

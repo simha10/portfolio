@@ -13,6 +13,7 @@ html {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -25,7 +26,8 @@ section {
 }
 
 /* Hover animations for links and buttons */
-a, button {
+a,
+button {
   transition: all 0.3s ease;
 }
 
@@ -39,11 +41,22 @@ a, button {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
 }
 
+/* 3D perspective base for tilt cards */
+.tilt-3d {
+  perspective: 1000px;
+}
+
+/* Subtle glow for interactive elements */
+.glow-hover:hover {
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
+}
