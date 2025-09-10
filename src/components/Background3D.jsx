@@ -1,7 +1,7 @@
 import React, { Suspense, useMemo, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Stars, Float, Environment } from '@react-three/drei';
-import { EffectComposer, Bloom, Vignette, Noise } from '@react-three/postprocessing';
+// postprocessing removed for compatibility
 
 function FloatingShapes() {
     const groupRef = useRef();
@@ -74,11 +74,7 @@ const Background3D = () => {
                     <Particles />
                     <FloatingShapes />
                 </Suspense>
-                <EffectComposer multisampling={4}>
-                    <Bloom intensity={0.6} luminanceThreshold={0.1} luminanceSmoothing={0.8} />
-                    <Noise opacity={0.035} />
-                    <Vignette eskil={false} offset={0.25} darkness={0.8} />
-                </EffectComposer>
+                {/* Effects removed for compatibility */}
             </Canvas>
         </div>
     );

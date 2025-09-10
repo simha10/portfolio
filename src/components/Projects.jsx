@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Github, Gamepad2, Briefcase } from 'lucide-react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
+import Background3D from './Background3D';
 
 const Projects = () => {
   const [activeSection, setActiveSection] = useState('professional');
@@ -93,11 +94,12 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-700">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="relative py-20 bg-gray-900 text-white overflow-hidden">
+      <Background3D />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">Projects</h2>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+          <h2 className="text-3xl font-extrabold text-white sm:text-4xl">Projects</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
             Explore my frontend development projects
           </p>
         </div>
@@ -125,7 +127,7 @@ const Projects = () => {
           </button>
         </div>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 tilt-3d">
           {(activeSection === 'professional' ? professionalProjects : miniProjects).map((project, index) => {
             const x = useMotionValue(0);
             const y = useMotionValue(0);
@@ -145,7 +147,7 @@ const Projects = () => {
             return (
               <motion.div
                 key={index}
-                className="bg-white rounded-lg shadow-lg overflow-hidden"
+                className="bg-gray-800/80 text-white rounded-lg shadow-xl overflow-hidden border border-white/5"
                 style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -161,13 +163,13 @@ const Projects = () => {
                   />
                 </div>
                 <div className="p-6" style={{ transform: 'translateZ(30px)' }}>
-                  <h3 className="text-lg font-semibold text-gray-900">{project.title}</h3>
-                  <p className="mt-2 text-gray-600">{project.description}</p>
+                  <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                  <p className="mt-2 text-gray-300">{project.description}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tech.map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-3 py-1 text-sm text-indigo-600 bg-indigo-100 rounded-full"
+                        className="px-3 py-1 text-sm text-indigo-300 bg-indigo-900/40 rounded-full"
                         style={{ transform: 'translateZ(40px)' }}
                       >
                         {tech}
@@ -177,14 +179,14 @@ const Projects = () => {
                   <div className="mt-4 flex space-x-4">
                     <a
                       href={project.liveUrl} target='_blank' rel='noreferrer'
-                      className="flex items-center text-gray-600 hover:text-gray-900"
+                      className="flex items-center text-indigo-300 hover:text-white"
                     >
                       <ExternalLink className="w-4 h-4 mr-1" />
                       View Project
                     </a>
                     <a
                       href={project.githubUrl} target='_blank' rel='noreferrer'
-                      className="flex items-center text-gray-600 hover:text-gray-900"
+                      className="flex items-center text-indigo-300 hover:text-white"
                     >
                       <Github className="w-4 h-4 mr-1" />
                       Source
