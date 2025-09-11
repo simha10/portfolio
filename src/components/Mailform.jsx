@@ -86,7 +86,7 @@ function Mailform() {
       )}
       
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-black">
+        <label htmlFor="name" className="block text-sm font-medium text-white">
           Name
         </label>
         <input
@@ -102,7 +102,7 @@ function Mailform() {
       </div>
       
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-black">
+        <label htmlFor="email" className="block text-sm font-medium text-white">
           Email
         </label>
         <input
@@ -118,7 +118,7 @@ function Mailform() {
       </div>
       
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-black">
+        <label htmlFor="message" className="block text-sm font-medium text-white">
           Message
         </label>
         <textarea

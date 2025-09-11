@@ -93,6 +93,22 @@ const Projects = () => {
     },
   ];
 
+  // Combine all projects for consistent hook calls
+  const allProjects = [...professionalProjects, ...miniProjects];
+
+  // Create motion values for all projects to ensure consistent hook order
+  const motionValues = allProjects.map(() => {
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useTransform(y, [-50, 50], [10, -10]);
+    const rotateY = useTransform(x, [-50, 50], [-10, 10]);
+    return { x, y, rotateX, rotateY };
+  });
+
+  // Select projects based on active section
+  const selectedProjects = activeSection === 'professional' ? professionalProjects : miniProjects;
+  const offset = activeSection === 'professional' ? 0 : professionalProjects.length;
+
   return (
     <section id="projects" className="relative py-20 bg-gray-900 text-white overflow-hidden">
       <Background3D />
@@ -128,11 +144,8 @@ const Projects = () => {
         </div>
 
         <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 tilt-3d">
-          {(activeSection === 'professional' ? professionalProjects : miniProjects).map((project, index) => {
-            const x = useMotionValue(0);
-            const y = useMotionValue(0);
-            const rotateX = useTransform(y, [-50, 50], [10, -10]);
-            const rotateY = useTransform(x, [-50, 50], [-10, 10]);
+          {selectedProjects.map((project, index) => {
+            const { x, y, rotateX, rotateY } = motionValues[index + offset];
             const handleMouseMove = (e) => {
               const rect = e.currentTarget.getBoundingClientRect();
               const dx = e.clientX - rect.left - rect.width / 2;
