@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TiltCard from './TiltCard';
 
 function Mailform() {
   const [formData, setFormData] = useState({
@@ -65,7 +66,7 @@ function Mailform() {
     } finally {
       setIsLoading(false);
       setShowMessage(true);
-      
+
       // Hide message after 5 seconds
       setTimeout(() => {
         setShowMessage(false);
@@ -74,77 +75,79 @@ function Mailform() {
   };
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6">
-      {showMessage && (
-        <div className={`p-4 rounded-md ${
-          messageType === "success" 
-            ? "bg-green-50 border border-green-200 text-green-800" 
-            : "bg-red-50 border border-red-200 text-red-800"
-        }`}>
-          <p className="text-sm font-medium">{message}</p>
-        </div>
-      )}
-      
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-white">
-          Name
-        </label>
-        <input
-          type="text"
-          placeholder="Your Name"
-          name="name"
-          id="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        />
+    <TiltCard>
+      <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 transform transition duration-500 hover:border-indigo-500 hover:shadow-xl">
+        <form onSubmit={onSubmit} className="space-y-6">
+          {showMessage && (
+            <div className={`p-4 rounded-md ${messageType === "success"
+              ? "bg-green-900/50 border border-green-700 text-green-300 animate-glow"
+              : "bg-red-900/50 border border-red-700 text-red-300 animate-glow"
+              }`}>
+              <p className="text-sm font-medium">{message}</p>
+            </div>
+          )}
+
+          <div>
+            <label htmlFor="name" className="block text-sm font-medium text-white">
+              Name
+            </label>
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-4 py-3 border border-gray-700 rounded-lg shadow-sm bg-gray-800/50 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-white">
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-4 py-3 border border-gray-700 rounded-lg shadow-sm bg-gray-800/50 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-white">
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Your Message"
+              rows={4}
+              value={formData.message}
+              onChange={handleChange}
+              required
+              className="mt-1 block w-full px-4 py-3 border border-gray-700 rounded-lg shadow-sm bg-gray-800/50 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-300"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white transition duration-300 transform hover:scale-105 ${isLoading
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 animate-gradient"
+              }`}
+          >
+            {isLoading ? "Sending..." : "Send Message"}
+          </button>
+        </form>
       </div>
-      
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-white">
-          Email
-        </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        />
-      </div>
-      
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-white">
-          Message
-        </label>
-        <textarea
-          name="message"
-          id="message"
-          placeholder="Your Message"
-          rows={4}
-          value={formData.message}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-        ></textarea>
-      </div>
-      
-      <button
-        type="submit"
-        disabled={isLoading}
-        className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white ${
-          isLoading 
-            ? "bg-gray-400 cursor-not-allowed" 
-            : "bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        }`}
-      >
-        {isLoading ? "Sending..." : "Send Message"}
-      </button>
-    </form>
+    </TiltCard>
   );
 }
 
