@@ -1,66 +1,66 @@
 import React from 'react';
-import { Code, Cpu, Globe, Database, Zap, Brain } from 'lucide-react';
+import { Code, Database, Globe, Server } from 'lucide-react';
+import Card from './Card';
 
 const About = () => {
-  const skills = [
-    { icon: <Cpu size={24} className='text-indigo-400' />, title: 'Automation Engineering', description: 'Building tools that eliminate repetitive tasks' },
-    { icon: <Globe size={24} className='text-indigo-400' />, title: 'Full-Stack Development', description: 'React, Node.js, MongoDB with system design thinking' },
-    { icon: <Brain size={24} className='text-indigo-400' />, title: 'AI Integration', description: 'Connecting machine learning models with web interfaces' },
-    { icon: <Database size={24} className='text-indigo-400' />, title: 'Data Processing', description: 'Efficiently handling large datasets and metadata extraction' },
-    { icon: <Zap size={24} className='text-indigo-400' />, title: 'System Architecture', description: 'Designing scalable solutions for real-world problems' },
-    { icon: <Code size={24} className='text-indigo-400' />, title: 'Core Technologies', description: 'JavaScript, Python, FFmpeg, Puppeteer, nut.js' },
+  const expertise = [
+    { icon: <Globe size={24} className='text-indigo-400' />, title: 'Full Stack Development', description: 'React, Node.js, Express, MongoDB - End-to-end application development' },
+    { icon: <Server size={24} className='text-indigo-400' />, title: 'Production Deployment', description: 'Docker, Google Cloud Run, Vercel - Scalable cloud infrastructure' },
+    { icon: <Database size={24} className='text-indigo-400' />, title: 'System Architecture', description: 'RESTful APIs, database design, authentication systems' },
+    { icon: <Code size={24} className='text-indigo-400' />, title: 'Clean Code', description: 'Maintainable, tested, and documented production-ready code' },
   ];
 
   return (
-    <section id="about" className="relative py-20 bg-black/30 text-white overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="relative py-24 bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
-          <div className="relative w-64 h-64 mb-12">
-            <div className="absolute inset-0 bg-indigo-500 rounded-full blur-xl opacity-20"></div>
+          <div className="relative w-48 h-48 mb-10">
             <img
               src="/profile.jpg"
-              alt="Developer workspace"
-              className="rounded-full shadow-2xl w-full h-full object-cover relative z-10 border-4 border-indigo-500/30"
+              alt="Simhachalam Mandapudi"
+              className="rounded-full shadow-2xl w-full h-full object-cover border-4 border-indigo-500/50"
             />
           </div>
 
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl font-extrabold sm:text-4xl mb-6 text-white bg-clip-text text-transparent bg-gradient-to-r from-white to-indigo-300">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold sm:text-5xl mb-6 text-white">
               About Me
             </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              Automation-focused Full-Stack Developer | 2025 CSE Graduate | Building Production-Level Tools That Reduce Manual Work by 80%+
+            <p className="text-xl text-gray-300 mb-8 font-medium">
+              Application Developer at LRM Consultants | B.Tech CSE 2025 Graduate
             </p>
 
-            <p className="text-lg text-gray-300 mb-8">
-              I specialize in creating intelligent automation solutions that bridge the gap between traditional workflows and AI-powered systems. With experience in real-world production environments, I've developed tools that compress geo-tagged videos without metadata loss, automate GUI workflows, and extract actionable insights from video telemetry data.
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              I am a Full Stack Developer with experience in building and deploying production web applications.
+              Currently working at LRM Consultants, where I develop full-scale systems used by real users including
+              the Staff Attendance Management System (SAMS) and a Socio-Economic Survey Platform for large-scale
+              data collection.
             </p>
 
-            <p className="text-lg text-gray-300 mb-12">
-              Currently exploring AI-Full Stack integration to build smarter, scalable solutions that handle complex data processing with minimal human intervention.
+            <p className="text-lg text-gray-300 mb-12 leading-relaxed">
+              My focus is on creating reliable, scalable solutions using modern technologies like React, Node.js,
+              Express, MongoDB, PostgreSQL, and Docker. I handle the complete development lifecycle from architecture
+              and database design to deployment and maintenance on cloud infrastructure.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {skills.map((skill, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700 transform transition duration-500 hover:scale-105 hover:border-indigo-500 hover:shadow-xl"
-                >
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 rounded-full bg-indigo-900/30">
-                      {skill.icon}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+              {expertise.map((item, index) => (
+                <Card key={index} className="text-left">
+                  <div className="flex items-start mb-3">
+                    <div className="p-2 rounded-full bg-indigo-900/30 mr-3">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-indigo-300">{item.title}</h3>
+                      <p className="text-gray-300 text-sm mt-1">{item.description}</p>
                     </div>
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 text-indigo-300">{skill.title}</h3>
-                  <p className="text-gray-300">{skill.description}</p>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };

@@ -8,14 +8,15 @@ const Header = () => {
     <header className="fixed w-full bg-gray-900/90 backdrop-blur-sm z-50 border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-2xl font-bold text-white">
-            Portfolio
+          <div className="text-xl font-bold text-white">
+            Simhachalam Mandapudi
           </div>
 
           <nav className="hidden md:flex space-x-8">
             <a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a>
             <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">About</a>
             <a href="#experience" className="text-gray-300 hover:text-white transition-colors duration-200">Experience</a>
+            <a href="#production" className="text-gray-300 hover:text-white transition-colors duration-200">Production</a>
             <a href="#skills" className="text-gray-300 hover:text-white transition-colors duration-200">Skills</a>
             <a href="#projects" className="text-gray-300 hover:text-white transition-colors duration-200">Projects</a>
             <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
@@ -48,6 +49,7 @@ const Header = () => {
             <a href="#home" className="block px-3 py-2 text-gray-300 hover:text-white">Home</a>
             <a href="#about" className="block px-3 py-2 text-gray-300 hover:text-white">About</a>
             <a href="#experience" className="block px-3 py-2 text-gray-300 hover:text-white">Experience</a>
+            <a href="#production" className="block px-3 py-2 text-gray-300 hover:text-white">Production</a>
             <a href="#skills" className="block px-3 py-2 text-gray-300 hover:text-white">Skills</a>
             <a href="#projects" className="block px-3 py-2 text-gray-300 hover:text-white">Projects</a>
             <a href="#contact" className="block px-3 py-2 text-gray-300 hover:text-white">Contact</a>
