@@ -5,46 +5,89 @@ import TiltCard from './TiltCard';
 const Experience = () => {
     const tools = [
         {
-            icon: <FiVideo className="w-6 h-6" />,
-            title: 'Safe Compressor',
-            tagline: 'Lossless Geo-Video Compression Solution',
-            description: 'Enterprise-grade video compression solution that maintains geo-tagged metadata integrity. Processes large video files without quality degradation while preserving crucial location and timestamp data for analytics.',
-            tech: ['Node.js', 'FFmpeg', 'Metadata Processing', 'File System API'],
-            impact: [
-                'Preserved 100% of critical metadata during compression',
-                'Achieved 60% average file size reduction',
-                'Enabled batch processing of 500+ videos simultaneously',
-                'Integrated automated validation pipeline ensuring data integrity'
+            icon: <FiDatabase className="w-6 h-6" />,
+            title: "SAMS - Staff Attendance Management System",
+            tagline: "Production Workforce Attendance Platform",
+            description:
+                "Designed, developed, and deployed a full-scale Staff Attendance Management System currently running in production for LRM Consultants. The system enables real-time attendance tracking, administrative control, and secure workforce monitoring through a scalable web architecture.",
+            tech: [
+                "React",
+                "Node.js",
+                "Express",
+                "MongoDB",
+                "Vercel",
+                "Google Cloud Run",
+                "Docker",
+                "JWT Authentication"
             ],
-            accentColor: 'indigo'
+            impact: [
+                "Deployed production system used for real-time staff attendance monitoring",
+                "Built secure admin dashboards for workforce management",
+                "Implemented scalable backend deployment using containerized services",
+                "Ensured reliable uptime with continuous maintenance and updates"
+            ],
+            accentColor: "indigo",
+            link: "https://attendance.lrmconsultant.in"
+        },
+        {
+            icon: <FiTrendingUp className="w-6 h-6" />,
+            title: "Socio Economic Survey Application",
+            tagline: "Large-Scale Field Data Collection Platform",
+            description:
+                "Developed a scalable socio-economic survey platform used for ward and mohalla level data collection. The system supports controlled surveyor access, administrative monitoring, and structured data storage for analysis and reporting.",
+            tech: [
+                "React",
+                "Node.js",
+                "Express",
+                "Supabase",
+                "PostgreSQL",
+                "Vercel",
+                "Cloud Run",
+                "Role Based Access Control"
+            ],
+            impact: [
+                "Enabled structured socio-economic data collection across multiple wards",
+                "Implemented admin-level monitoring of surveyor activities",
+                "Designed ward-level access control to prevent unauthorized surveys",
+                "Optimized data pipelines for large-scale survey submissions"
+            ],
+            accentColor: "indigo",
+            link: "https://socio-economic-survey.vercel.app/"
         },
         {
             icon: <FiZap className="w-6 h-6" />,
-            title: 'Telemetry Automation',
-            tagline: 'Intelligent GUI Workflow Automation Engine',
-            description: 'Comprehensive automation framework that orchestrates GUI-based workflows for sequential video processing. Eliminates manual intervention in data-heavy operations while ensuring consistent quality output.',
-            tech: ['Node.js', 'Puppeteer', 'nut.js', 'Process Automation', 'Error Handling'],
-            impact: [
-                'Automated 1000+ sequential video processing tasks monthly',
-                'Eliminated 80% of manual work in telemetry processing',
-                'Maintained 99.9% error-free consecutive processing rate',
-                'Implemented real-time progress monitoring dashboard'
+            title: "Cloud Kitchen Website (Upcoming)",
+            tagline: "Production-ready Restaurant Ordering Platform",
+            description:
+                "Currently developing a modern web platform for a cloud kitchen business including menu display, order management, and customer interaction modules. The platform focuses on performance, mobile-first UX, and fast deployment cycles.",
+            tech: [
+                "React",
+                "TailwindCSS",
+                "Node.js",
+                "Express",
+                "Vercel Deployment"
             ],
-            accentColor: 'indigo'
+            impact: [
+                "Designed responsive UI optimized for food ordering workflows",
+                "Built scalable architecture ready for production deployment",
+                "Integrated modern frontend stack for fast page loading",
+                "Preparing platform for public launch"
+            ],
+            accentColor: "indigo"
         },
         {
-            icon: <FiDatabase className="w-6 h-6" />,
-            title: 'Metadata Extractor',
-            tagline: 'High-Performance Geo-Data Analysis Pipeline',
-            description: 'High-performance batch extraction tool for geo-spatial video metadata with structured CSV export for data analysis.',
-            tech: ['Node.js', 'fs Module', 'CSV Parser', 'Stream Processing'],
+            icon: <FiVideo className="w-6 h-6" />,
+            title: "Safe Compressor",
+            tagline: "Lossless Geo-Video Compression Solution",
+            description:
+                "Enterprise-grade video compression pipeline preserving geo-tagged metadata while reducing storage footprint.",
+            tech: ["Node.js", "FFmpeg", "Metadata Processing"],
             impact: [
-                'Extracted coordinates, altitude, speed from 1000+ videos',
-                'Generated structured CSV reports for business intelligence',
-                'Reduced data analysis time from hours to minutes',
-                'Configured customizable extraction parameters for diverse needs'
+                "Preserved 100% metadata integrity",
+                "Reduced video file size by 60%",
+                "Enabled batch compression for large datasets"
             ],
-            accentColor: 'indigo'
+            accentColor: "indigo"
         }
     ];
 
@@ -66,7 +109,7 @@ const Experience = () => {
                     <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 transform transition duration-500 hover:border-indigo-500 hover:shadow-xl">
                         <div className="flex flex-col md:flex-row items-center gap-6">
                             <div className="text-center md:text-left">
-                                <h3 className="text-2xl font-bold text-indigo-400">Automation Engineer</h3>
+                                <h3 className="text-2xl font-bold text-indigo-400">Application Developer</h3>
                                 <p className="text-lg text-gray-300 mt-1">LRM Consultanats • Remote</p>
                                 <p className="text-gray-400 mt-2">May 2025 - Present</p>
                                 <div className="mt-4 flex flex-wrap justify-center md:justify-start gap-2">
@@ -85,7 +128,13 @@ const Experience = () => {
 
                         <div className="mt-6">
                             <p className="text-gray-300 text-lg">
-                                Developed and deployed enterprise-grade automation solutions that streamline video processing workflows. Reduced manual effort by 80% while maintaining zero-error rates in critical data processing tasks. Architected scalable systems that process thousands of geo-tagged videos with preserved metadata integrity.
+                                Full-stack developer at LRM Consultants responsible for designing, developing,
+                                deploying, and maintaining production web applications including the Staff
+                                Attendance Management System (SAMS) and a Socio-Economic Survey Platform.
+                                Managed full lifecycle development from architecture and database design to
+                                deployment on modern cloud infrastructure. Currently maintaining live systems,
+                                handling updates, and building new production platforms including a cloud
+                                kitchen website.
                             </p>
                         </div>
                     </div>
